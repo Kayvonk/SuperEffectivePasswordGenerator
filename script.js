@@ -26,37 +26,37 @@ function generatePassword() {
   if (length < 8 || length > 128 || isNaN(length)) {
     alert("Please enter a number between 8 and 128")
     var length = prompt("How many characters do you want your password to be? (minimum length: 8, maximum length: 128)");
-    if (length < 8 || length > 128 || isNaN(length)) {
+    if (length < 8 || length > 128 || isNaN(length))
       return ""
-    }
-    var symbolconfirm = confirm("Do you want to allow special characters?");
-
-    var uppercaseconfirm = confirm("Do you want to allow uppercase letters?");
-
-    var lowercaseconfirm = confirm("Do you want to allow lowercase letters?");
-
-    var numbersconfirm = confirm("Do you want to allow numbers?");
-    if (!symbolconfirm && !uppercaseconfirm && !lowercaseconfirm && !numbersconfirm) {
-      alert("Please select at least one character type")
-    }
-    var symbolconfirm = confirm("Do you want to allow special characters?");
-
-    var uppercaseconfirm = confirm("Do you want to allow uppercase letters?");
-
-    var lowercaseconfirm = confirm("Do you want to allow lowercase letters?");
-
-    var numbersconfirm = confirm("Do you want to allow numbers?");
   }
-  if (symbolconfirm) {
+  var symbolConfirm = confirm("Do you want to allow special characters?");
+
+  var uppercaseConfirm = confirm("Do you want to allow uppercase letters?");
+
+  var lowercaseConfirm = confirm("Do you want to allow lowercase letters?");
+
+  var numbersConfirm = confirm("Do you want to allow numbers?");
+  if (!symbolConfirm && !uppercaseConfirm && !lowercaseConfirm && !numbersConfirm) {
+    alert("Please select at least one character type")
+
+    var symbolConfirm = confirm("Do you want to allow special characters?");
+
+    var uppercaseConfirm = confirm("Do you want to allow uppercase letters?");
+
+    var lowercaseConfirm = confirm("Do you want to allow lowercase letters?");
+
+    var numbersConfirm = confirm("Do you want to allow numbers?");
+  }
+  if (symbolConfirm) {
     characters = characters + symbols
   }
-  if (uppercaseconfirm) {
+  if (uppercaseConfirm) {
     characters = characters + uppercase
   }
-  if (lowercaseconfirm) {
+  if (lowercaseConfirm) {
     characters = characters + lowercase
   }
-  if (numbersconfirm) {
+  if (numbersConfirm) {
     characters = characters + numbers
   }
   var password = ""
