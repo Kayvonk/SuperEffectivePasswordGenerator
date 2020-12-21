@@ -22,21 +22,28 @@ function writePassword() {
 function generatePassword() {
   var characters = ""
 
-  var length = prompt("How many characters do you want your password to be?");
+  var length = prompt("How many characters do you want your password to be? (minimum length: 8, maximum length: 128)");
   if (length < 8 || length > 128 || isNaN(length)) {
     alert("Please enter a number between 8 and 128")
-    return ""
+    var length = prompt("How many characters do you want your password to be? (minimum length: 8, maximum length: 128)");
   }
-  var symbolconfirm = confirm("Do you want it to include special characters?");
+  var symbolconfirm = confirm("Do you want to allow special characters?");
 
-  var uppercaseconfirm = confirm("Do you want it to include uppercase letters?");
+  var uppercaseconfirm = confirm("Do you want to allow uppercase letters?");
 
-  var lowercaseconfirm = confirm("Do you want it to include lowercase letters?");
+  var lowercaseconfirm = confirm("Do you want to allow lowercase letters?");
 
-  var numbersconfirm = confirm("Do you want it to include numbers?");
+  var numbersconfirm = confirm("Do you want to allow numbers?");
   if (!symbolconfirm && !uppercaseconfirm && !lowercaseconfirm && !numbersconfirm) {
     alert("Please select at least one character type")
-    return ""
+
+    var symbolconfirm = confirm("Do you want to allow special characters?");
+
+    var uppercaseconfirm = confirm("Do you want to allow uppercase letters?");
+
+    var lowercaseconfirm = confirm("Do you want to allow lowercase letters?");
+
+    var numbersconfirm = confirm("Do you want to allow numbers?");
   }
   if (symbolconfirm) {
     characters = characters + symbols
